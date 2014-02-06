@@ -1,22 +1,26 @@
 {
-  "name": "gulp-dotjs-packer",
-  "description": "Dotjs packer for Gulp.js",
-  "version": "0.0.1",
-  "repository": {
-    "type": "git"
-  },
-  "author": {
-    "name": "Sergey Pimenov",
-    "email": "pimenov.sergei@gmail.com"
-  },
-  "main": "index.js",
-  "keywords": [
-    "gulp",
-    "dotjs"
-  ],
-  "dependencies": {
-    "gulp-util": "~2.2.14",
-    "through": "~2.3.4",
-    "dot": "~1.0.2"
-  }
+    "name": "gulp-dotjs-packer",
+    "description": "Dotjs packer for Gulp.js",
+    "version": "0.0.1",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/xquezme/gulp-dotjs-packer.git"
+    },
+    "author": {
+        "name": "Sergey Pimenov",
+        "email": "pimenov.sergei@gmail.com"
+    },
+    "main": "index.js",
+    "keywords": [
+        "gulp",
+        "dotjs"
+    ],
+    "dependencies": {
+        "gulp-util": "~2.2.14",
+        "through": "~2.3.4",
+        "dot": "~1.0.2"
+    },
+    "homepage": "https://github.com/xquezme/gulp-dotjs-packer",
+    "readmeFilename": "README.md"
 }
