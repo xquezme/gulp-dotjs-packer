@@ -11,7 +11,8 @@
   "main": "index.js",
   "keywords": [
     "gulp",
-    "dotjs"
+    "dotjs",
+    "gulpplugin"
   ],
   "dependencies": {
     "gulp-util": "~2.2.14",
