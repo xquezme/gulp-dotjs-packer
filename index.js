@@ -21,6 +21,7 @@ module.exports = function(opt) {
     var processName = opt.processName;
     var variable = opt.variable;
     var templateSettings = opt.templateSettings;
+    var wrap = typeof opt.wrap !== "undefined" ? opt.wrap : {};
 
     function handleCompile(content, settings, defs, variable, path) {
         var template = "";
@@ -45,7 +46,15 @@ module.exports = function(opt) {
         if (buffer.length === 0) return this.emit('end');
 
         var joinedContents = buffer.join(opt.newLine);
-        var content = "(function(root, factory) { if (typeof define === 'function' && define.amd) { define(factory); } else { root['" + variable + "'] = factory(); } }(this, function() {\r\nvar " + variable + " = " + variable + " || {}; \r\n" + joinedContents + " \r\nreturn " + variable + "; \r\n}));"
+        var content;
+
+        if(wrap.start && wrap.end) {
+            content = wrap.start + joinedContents + wrap.end;
+        } else if(wrap!== false) {
+            content = "(function(root, factory) { if (typeof define === 'function' && define.amd) { define(factory); } else { root['" + variable + "'] = factory(); } }(this, function() {\r\nvar " + variable + " = " + variable + " || {}; \r\n" + joinedContents + " \r\nreturn " + variable + "; \r\n}));"
+        } else {
+            content = joinedContents;
+        }
 
         var joinedPath = path.join(firstFile.base, fileName);
 

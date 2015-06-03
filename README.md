@@ -5,7 +5,7 @@
 ## Information
 
 <table>
-<tr> 
+<tr>
 <td>Package</td><td>gulp-dotjs-packer</td>
 </tr>
 <tr>
@@ -36,8 +36,41 @@ gulp.task('dot', function() {
 ## Options
 
 - `fileName`
-	
+
 	Name of output file
+
+- `wrap`
+
+    Add a wrapper to be around the output file
+
+    examples:
+
+    [default] - Adds UMD wrapper around the output file
+    ```
+        dotPacker({
+            wrap: true
+            ...
+        });
+    ```
+
+    Disable wrapping
+    ```
+        dotPacker({
+            wrap: false
+            ...
+        });
+    ```
+
+    Custom start and end wrapper
+    ```
+        dotPacker({
+            wrap: {
+                start: "(function() {\r\n",
+                end: "\r\n}())"
+                ...
+            }
+        });
+    ```
 
 - `variable`
 
